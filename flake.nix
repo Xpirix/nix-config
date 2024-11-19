@@ -62,7 +62,10 @@
     ######################################################
 
     packages = {
-      x86_64-linux = let pkgs = pkgsFor "x86_64-linux"; in {
+      x86_64-linux = let
+        pkgs = pkgsFor "x86_64-linux";
+        system = "x86_64-linux";
+      in {
         default = pkgs.callPackage ./packages/utils {};
         setup-zfs-machine = pkgs.callPackage ./packages/setup-zfs-machine {};
         qgis-custom = pkgs.qgis.overrideAttrs (oldAttrs: rec {
@@ -82,16 +85,17 @@
         iso = nixos-generators.nixosGenerate {
           inherit pkgs;
           modules = [./installer-configuration.nix ./software/system/kartoza-plymouth.nix ./software/system/kartoza-grub.nix ./software/system/ssh.nix];
-          format =
-            {
-              x86_64-linux = "install-iso";
-              aarch64-linux = "sd-aarch64-installer";
-            }
-            .${system};
+          format = {
+            x86_64-linux = "install-iso";
+            aarch64-linux = "sd-aarch64-installer";
+          }.${system};
         };
       };
 
-      aarch64-linux = let pkgs = pkgsFor "aarch64-linux"; in {
+      aarch64-linux = let
+        pkgs = pkgsFor "aarch64-linux";
+        system = "aarch64-linux";
+      in {
         default = pkgs.callPackage ./packages/utils {};
         setup-zfs-machine = pkgs.callPackage ./packages/setup-zfs-machine {};
         qgis-custom = pkgs.qgis.overrideAttrs (oldAttrs: rec {
@@ -111,12 +115,10 @@
         iso = nixos-generators.nixosGenerate {
           inherit pkgs;
           modules = [./installer-configuration.nix ./software/system/kartoza-plymouth.nix ./software/system/kartoza-grub.nix ./software/system/ssh.nix];
-          format =
-            {
-              x86_64-linux = "install-iso";
-              aarch64-linux = "sd-aarch64-installer";
-            }
-            .${system};
+          format = {
+            x86_64-linux = "install-iso";
+            aarch64-linux = "sd-aarch64-installer";
+          }.${system};
         };
       };
     };
@@ -133,13 +135,10 @@
         live = pkgsFor system.lib.nixosSystem {
           specialArgs = specialArgsFor system;
           inherit system;
-          modules =
-            [
-              "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
-              isoBaseFor system
-            ]
-            ++ sharedModulesFor system
-            ++ [./hosts/iso-gnome.nix];
+          modules = [
+            "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+            isoBaseFor system
+          ] ++ sharedModulesFor system ++ [./hosts/iso-gnome.nix];
         };
 
         crest = makeHostFor system "crest";
