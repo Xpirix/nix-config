@@ -61,24 +61,6 @@
     ##
     ######################################################
 
-    # Default package - utilities to help you prepare for setting up a new machine.
-    #
-    # Run with:
-    # "nix run"
-    # or
-    # nix run github:timlinux/nix-config
-    # or
-    # nix run github:timlinux/nix-config#default
-    #
-    # to include in a config do:
-    #
-    # { pkgs, ... }: {
-    #   nixpkgs.overlays = [(import ../../packages)];
-    #   environment.systemPackages = with pkgs; [
-    #     qgis
-    #   ];
-    # }
-
     packages = {
       x86_64-linux = let pkgs = pkgsFor "x86_64-linux"; in {
         default = pkgs.callPackage ./packages/utils {};
@@ -148,12 +130,6 @@
     nixosConfigurations = builtins.listToAttrs (map (system: {
       name = system;
       value = {
-        # Live iso Generation
-        # Please read: https://nixos.wiki/wiki/Creating_a_NixOS_live_CD
-        # To build:
-        # nix build .#nixosConfigurations.${system}.config.system.build.isoImage
-        # To run:
-        # qemu-system-${system} -enable-kvm -m 8096 -cdrom result/iso/nixos-*.iso
         live = pkgsFor system.lib.nixosSystem {
           specialArgs = specialArgsFor system;
           inherit system;
@@ -166,20 +142,20 @@
             ++ [./hosts/iso-gnome.nix];
         };
 
-        crest = makeHostFor system "crest"; # Tim's p14s thinkpad - love this machine!
-        waterfall = makeHostFor system "waterfall"; # Tim Tuxedo desktop box
-        valley = makeHostFor system "valley"; # Tim headless box
-        delta = makeHostFor system "delta"; # Amy Laptop
-        lagoon = makeHostFor system "lagoon"; # Vicky laptop
-        plain = makeHostFor system "plain"; # Marina laptop
-        rock = makeHostFor system "rock"; # Virtman manual testbed
-        jeff = makeHostFor system "jeff"; # Jeff - running plasma
-        atoll = makeHostFor system "atoll"; # Dorah's Laptop
-        crater = makeHostFor system "crater"; # Eli's Laptop
-        test-gnome-full = makeHostFor system "test-gnome-full"; # Automated testbed - test gnome
-        test-gnome-minimal = makeHostFor system "test-gnome-minimal"; # Automated testbed - test gnome
-        test-kde6 = makeHostFor system "test-kde6"; # Automated testbed - test kde6
-        test-kde5 = makeHostFor system "test-kde5"; # Automated testbed - test kde5
+        crest = makeHostFor system "crest";
+        waterfall = makeHostFor system "waterfall";
+        valley = makeHostFor system "valley";
+        delta = makeHostFor system "delta";
+        lagoon = makeHostFor system "lagoon";
+        plain = makeHostFor system "plain";
+        rock = makeHostFor system "rock";
+        jeff = makeHostFor system "jeff";
+        atoll = makeHostFor system "atoll";
+        crater = makeHostFor system "crater";
+        test-gnome-full = makeHostFor system "test-gnome-full";
+        test-gnome-minimal = makeHostFor system "test-gnome-minimal";
+        test-kde6 = makeHostFor system "test-kde6";
+        test-kde5 = makeHostFor system "test-kde5";
       };
     }) supportedSystems);
   };
