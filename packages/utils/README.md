@@ -12,7 +12,7 @@ nix run .#utils
 Or using the flake as a remote repo:
 
 ```
-nix run github:timlinux/nix-config#utils
+nix run github:Xpirix/nix-config#utils
 ```
 
 Tim Sutton

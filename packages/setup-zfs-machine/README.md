@@ -25,7 +25,7 @@ sudo nix run github:timlinux/main/flake#setup-zfs-machine
 
 ```
 nix-shell -p gum rpl wget
-wget https://raw.githubusercontent.com/timlinux/nix-config/main/packages/setup-zfs-machine/setup-host-with-zfs.sh 
+wget https://raw.githubusercontent.com/Xpirix/nix-config/main/packages/setup-zfs-machine/setup-host-with-zfs.sh 
 chmod +x setup-host-with-zfs.sh
 sudo ./setup-host-with-zfs.sh
 ```
@@ -63,7 +63,7 @@ debug-host-with-zfs.sh
 
 ```
 nix-shell -p gum rpl wget
-wget https://raw.githubusercontent.com/timlinux/nix-config/main/packages/setup-zfs-machine/debug-host-with-zfs.sh 
+wget https://raw.githubusercontent.com/Xpirix/nix-config/main/packages/setup-zfs-machine/debug-host-with-zfs.sh 
 chmod +x debug-host-with-zfs.sh
 sudo ./debug-host-with-zfs.sh
 ```

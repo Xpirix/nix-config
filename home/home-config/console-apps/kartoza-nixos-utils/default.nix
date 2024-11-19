@@ -17,7 +17,7 @@ in {
       desktopName = appName;
       genericName = appName;
       exec = ''
-        ${config.programs.kitty.package}/bin/kitty -e nix run --extra-experimental-features nix-command --extra-experimental-features flakes github:timlinux/nix-config
+        ${config.programs.kitty.package}/bin/kitty -e nix run --extra-experimental-features nix-command --extra-experimental-features flakes github:Xpirix/nix-config
       '';
       icon = iconPath;
       categories = ["Network" "System"];

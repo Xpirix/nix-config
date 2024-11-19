@@ -91,7 +91,7 @@
         <mxCell id="HKuoNgQitb8N7KYPjJj8-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="HKuoNgQitb8N7KYPjJj8-35" target="HKuoNgQitb8N7KYPjJj8-36">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="HKuoNgQitb8N7KYPjJj8-35" value="Open Browser at https://github.com/&lt;br&gt;timlinux/nix-config" style="rounded=1;whiteSpace=wrap;html=1;glass=1;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+        <mxCell id="HKuoNgQitb8N7KYPjJj8-35" value="Open Browser at https://github.com/&lt;br&gt;Xpirix/nix-config" style="rounded=1;whiteSpace=wrap;html=1;glass=1;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
           <mxGeometry x="520" y="560" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="HKuoNgQitb8N7KYPjJj8-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="HKuoNgQitb8N7KYPjJj8-36" target="HKuoNgQitb8N7KYPjJj8-37">

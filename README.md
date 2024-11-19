@@ -24,7 +24,7 @@
 ✂️💩 I know what I am here for, just give me the ❄️flake 🔗link! 💩✂️
 
 ```
-nix run --extra-experimental-features nix-command --extra-experimental-features flakes github:timlinux/nix-config
+nix run --extra-experimental-features nix-command --extra-experimental-features flakes github:Xpirix/nix-config
 ```
 
 Otherwise, please read on...
@@ -136,7 +136,7 @@ I have made a lovely menu / terminal app with all the key functionality provided
 Running the flake directly from github:
 
 ```
-nix run --extra-experimental-features nix-command --extra-experimental-features flakes github:timlinux/nix-config
+nix run --extra-experimental-features nix-command --extra-experimental-features flakes github:Xpirix/nix-config
 ```
 
 Or from a local checkout:
@@ -247,19 +247,19 @@ etc. and to set up your skate link.
 You can list the flakes like this:
 
 ```
-nix flake show github:timlinux/nix-config
+nix flake show github:Xpirix/nix-config
 ```
 
 Or if you want to refer to a git branch, add it to the end of the URL e.g. for a branch called 'flakes':
 
 ```
-nix flake show github:timlinux/nix-config/flakes
+nix flake show github:Xpirix/nix-config/flakes
 ```
 
 You will get something like this in the output (most likely changed since I write this):
 
 ```
-github:timlinux/nix-config/857473686683ca6b2b2ce713fa7807da470054c6
+github:Xpirix/nix-config/857473686683ca6b2b2ce713fa7807da470054c6
 ├───devShells
 │   └───x86_64-linux
 │       └───default: development environment 'nix-shell'
@@ -290,8 +290,8 @@ github:timlinux/nix-config/857473686683ca6b2b2ce713fa7807da470054c6
 If you wish to just install one of the packages provided in this flake onto your own system you can do this:
 
 ```
-nix build --extra-experimental-features nix-command --extra-experimental-features flakes github:timlinux/nix-config#gverify
-nix profile install --extra-experimental-features nix-command --extra-experimental-features flakes github:timlinux/nix-config#gverify
+nix build --extra-experimental-features nix-command --extra-experimental-features flakes github:Xpirix/nix-config#gverify
+nix profile install --extra-experimental-features nix-command --extra-experimental-features flakes github:Xpirix/nix-config#gverify
 ```
 
 
@@ -333,7 +333,7 @@ Once your computer is started from the USB disk, open a web browser and open thi
 Then open a terminal window and paste this command:
 
 ```
-nix run --extra-experimental-features nix-command --extra-experimental-features flakes github:timlinux/nix-config
+nix run --extra-experimental-features nix-command --extra-experimental-features flakes github:Xpirix/nix-config
 ```
 
 The admin menu should appear after a few moments. From now on, when you see instructions preceded with 👉️, know that that is a menu option you should be chosing.
@@ -581,13 +581,13 @@ Use the 'rock' profile described above and follow these steps:
 If the flake has been modified in this repo, you can update it like this:
 
 ```
-nix flake update github:timlinux/nix-config
+nix flake update github:Xpirix/nix-config
 ```
 
 or for a git branch e.g. 'flakes' branch:
 
 ```
-nix flake update github:timlinux/nix-config/flakes
+nix flake update github:Xpirix/nix-config/flakes
 ```
 
 
@@ -677,7 +677,7 @@ Save as e.g. ``gverify.nix``
     (fetchFromGitHub {
       owner = "timlinux";
       repo = "nix-config";
-      # nix-shell -p nix-prefetch-git --command "nix-prefetch-git --url https://github.com/timlinux/nix-config" | grep "hash is"
+      # nix-shell -p nix-prefetch-git --command "nix-prefetch-git --url https://github.com/Xpirix/nix-config" | grep "hash is"
       rev = "0wj7hvlg1gp8dj0prrx8332pbz57lfp7kbk7654czbis4wjh06j4";
       # Optionally, you can specify a specific subdirectory
       # subdir = "packages";

@@ -17,7 +17,7 @@
               (let
                 bg = pkgs.fetchurl {
                   # TODO change branch in URL below to main once flakes branch is merged
-                  url = "https://raw.githubusercontent.com/timlinux/nix-config/main/resources/kartoza-background.gdm.png";
+                  url = "https://raw.githubusercontent.com/Xpirix/nix-config/main/resources/kartoza-background.gdm.png";
                   # nix-prefetch-github timlinux nix-config
                   sha256 = "sha256-f4xHLRDjGzytUr54UMQu/4A77BHKX2N30UZBKWBty9o=";
                 };

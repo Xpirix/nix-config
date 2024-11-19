@@ -441,7 +441,7 @@ confirm_format() {
     echo "This tool is destructive! It will delete all your partitions on your hard drive. Do you want to continue?"
     DESTROY=$(gum choose "DESTROY" "CANCEL")
     if [ "$DESTROY" == "DESTROY" ]; then
-        sudo nix run --extra-experimental-features nix-command --extra-experimental-features flakes github:timlinux/nix-config#setup-zfs-machine
+        sudo nix run --extra-experimental-features nix-command --extra-experimental-features flakes github:Xpirix/nix-config#setup-zfs-machine
     fi
 }
 
@@ -574,7 +574,7 @@ setup_menu() {
         # flake checked out can be handy...
         cd ~
         [ -d ~/dev/ ] || mkdir ~/dev
-        [ -d ~/dev/nix-config/ ] || git clone https://github.com/timlinux/nix-config.git ~/dev/nix-config
+        [ -d ~/dev/nix-config/ ] || git clone https://github.com/Xpirix/nix-config.git ~/dev/nix-config
         cd ~/dev/nix-config/
         git pull
         cd ~
@@ -952,11 +952,11 @@ help_menu() {
 
     case $choice in
     "📃 Documentation (in terminal)")
-        glow -p -s dark https://raw.githubusercontent.com/timlinux/nix-config/main/README.md
+        glow -p -s dark https://raw.githubusercontent.com/Xpirix/nix-config/main/README.md
         help_menu
         ;;
     "🌍️ Documentation (in browser)")
-        xdg-open https://github.com/timlinux/nix-config/blob/main/README.md
+        xdg-open https://github.com/Xpirix/nix-config/blob/main/README.md
         help_menu
         ;;
     "🏠️ Main menu")

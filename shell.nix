@@ -43,6 +43,6 @@ in
       echo "🚀 nix run   : Open the management utilities menu"
       echo "🆚 ./vscode  : Open VSCode ready to work on this flake"
       echo "_________________________________________________________"
-      echo "Tim Sutton, 2024   https://github.com/timlinux/nix-config"
+      echo "Tim Sutton, 2024   https://github.com/Xpirix/nix-config"
     '';
   }

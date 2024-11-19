@@ -211,7 +211,7 @@ if [ "$DESTROY" == "DESTROY" ]; then
   # then manually assign it to boot after making the partition
 
   if [ "$FLAKE" == "YES" ]; then
-    BOOTUUID=$(curl -s https://raw.githubusercontent.com/timlinux/nix-config/main/hosts/"${NEW_HOSTNAME}".nix | grep -o "by-uuid/[A-Z0-9-]*" | grep -o "[A-Z0-9-]*" | tail -1)
+    BOOTUUID=$(curl -s https://raw.githubusercontent.com/Xpirix/nix-config/main/hosts/"${NEW_HOSTNAME}".nix | grep -o "by-uuid/[A-Z0-9-]*" | grep -o "[A-Z0-9-]*" | tail -1)
     gum style "Setting boot UUID to ${BOOTUUID}"
     # See https://superuser.com/a/1294893
     #printf "\x%s\x%s\x%s\x%s" "${BOOTUUID:7:2}" "${BOOTUUID:5:2}" "${BOOTUUID:2:2}" "${BOOTUUID:0:2}" |
@@ -317,7 +317,7 @@ if [ "$FLAKE" == "YES" ]; then
     cd /mnt/nixos && git pull
   else
     echo "Directory does not exist. Cloning repository."
-    git clone https://github.com/timlinux/nix-config.git
+    git clone https://github.com/Xpirix/nix-config.git
     sudo mv /mnt/etc/nixos /mnt/etc/nixos_org
     sudo mv nix-config /mnt/etc/nixos
   fi

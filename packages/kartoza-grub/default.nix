@@ -22,7 +22,7 @@ stdenv.mkDerivation {
 
   meta = {
     description = "Kartoza Grub Theme";
-    homepage = "https://github.com/timlinux/nix-config";
+    homepage = "https://github.com/Xpirix/nix-config";
     license = lib.licenses.gpl3Plus;
     platforms = lib.platforms.linux;
     maintainers = with lib.maintainers; [timlinux];
